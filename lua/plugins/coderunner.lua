@@ -50,6 +50,7 @@ return {
         python = "python -u",
         sh = "bash",
         rust = "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+        r = "cd $dir && R < $filename --no-save",
       },
       project_path = "", -- No default path defined
       project = {},

@@ -2,6 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+vim.lsp.log.set_level(vim.log.levels.OFF)
 vim.opt.timeoutlen = 150
 vim.opt.spell = true
 vim.opt.spelllang = { "en", "cjk" }
@@ -10,12 +11,14 @@ vim.opt.backup = false
 vim.g.maplocalleader = "\\"
 vim.g.autoformat = false
 
-vim.g.node_host_prog = "/opt/homebrew/bin/neovim-node-host"
 local indent = 2
 -- vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.softtabstop = indent -- Number of spaces that a <Tab> counts for while performing editing operations
 vim.opt.tabstop = indent -- Number of spaces tabs count for
 vim.opt.shiftwidth = indent -- Size of an indent
+
+vim.g.node_host_prog = "/opt/homebrew/bin/neovim-node-host"
+-- vim.opt.expandtab = true -- Use spaces instead of tabs
 
 if vim.g.neovide then
   vim.o.guifont = "Maple Mono:h16"
