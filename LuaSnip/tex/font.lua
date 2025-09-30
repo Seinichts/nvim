@@ -133,12 +133,6 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
-  s(
-    { trig = "tet", snippetType = "autosnippet" },
-    fmta("\\text{<>}", {
-      i(1),
-    })
-  ),
   s({ trig = "CC", snippetType = "autosnippet" },
     t("\\mathbb{C}"),
     { condition = tex.in_mathzone() }),

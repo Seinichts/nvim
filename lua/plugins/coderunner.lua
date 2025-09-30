@@ -51,6 +51,7 @@ return {
         sh = "bash",
         rust = "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
         r = "cd $dir && R < $filename --no-save",
+        typst = "cd $dir && typst compile $fileName",
       },
       project_path = "", -- No default path defined
       project = {},

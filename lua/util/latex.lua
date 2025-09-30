@@ -59,7 +59,7 @@ end
 
 M.in_mathzone_tex = function()
   local row, col = unpack(vim.api.nvim_win_get_cursor(0))
-  local node = vim.treesitter.get_node({ bufnr = 0, pos = { row - 1, col } })
+  local node = vim.treesitter.get_node({ bufnr = 0, pos = { row - 1, col - 1 } })
   while node do
     if MATH_NODES[node:type()] then
       return true
@@ -87,6 +87,9 @@ end
 
 M.in_item = function()
   return M.in_env("itemize") or M.in_env("enumerate")
+end
+M.in_item_typst = function()
+  return M.in_env("itemize") or M.in_env("enum")
 end
 M.in_bib = function()
   return M.in_env("thebibliography")

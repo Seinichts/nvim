@@ -106,11 +106,11 @@ return {
   s({ trig = "=>", snippetType = "autosnippet" }, {
     t("$\\implies$"),
   }, { condition = tex.in_text }),
-  s({ trig = "<=", snippetType = "autosnippet" }, {
+  s({ trig = "=<", snippetType = "autosnippet" }, {
     t("$\\impliedby$"),
   }, { condition = tex.in_text }),
   s(
-    { trig = "(%a)ii", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    { trig = "(%a)mk", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
     fmta("$<>$", {
       f(function(_, snip)
         return snip.captures[1]

@@ -177,24 +177,6 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "(\\%a+)~", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-    fmta("\\tilde{<>}", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "(%a)~", wordTrig = false, regTrig = true, snippetType = "autosnippet" },
-    fmta("\\tilde{<>}", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
     { trig = "dot", snippetType = "autosnippet", priority = 2000 },
     fmta("\\dot{<>}", {
       d(1, get_visual),

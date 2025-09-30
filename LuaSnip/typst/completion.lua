@@ -84,56 +84,6 @@ return {
     { condition = tex.in_mathzone }
   ),
   s(
-    { trig = "(%d+)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
-    fmta("frac(<>)(<>)", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "(%a)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 100 },
-    fmta("frac(<>)(<>)", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "%((.+)%)/", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("frac(<>)(<>)", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "(%a+)/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("frac(<>)(<>)", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
-    { trig = "(%a+%{%a+%})/", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 3000 },
-    fmta("frac(<>)(<>)", {
-      f(function(_, snip)
-        return snip.captures[1]
-      end),
-      i(1),
-    }),
-    { condition = tex.in_mathzone }
-  ),
-  s(
     { trig = "%)(%a)", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
     fmta(") <>", {
       f(function(_, snip)
@@ -170,22 +120,22 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
-  -- s(
-  --   { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-  --   fmta("sumlimits_(<>)^(<>)", {
-  --     i(1),
-  --     i(1),
-  --   }),
-  --   { condition = tex.in_mathzone }
-  -- ),
   s(
-    { trig = "sum", snippetType = "autosnippet" },
-    c(1, {
-      sn(nil, { t("sum_{"), i(1), t("} ") }),
-      sn(nil, { t("sum_{"), i(1), t("}^{"), i(2), t("} ") }),
+    { trig = "sum", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+    fmta("sum_(<>)^(<>)", {
+      i(1),
+      i(2),
     }),
     { condition = tex.in_mathzone }
   ),
+  -- s(
+  --   { trig = "sum", snippetType = "autosnippet" },
+  --   c(1, {
+  --     sn(nil, { t("sum_{"), i(1), t("} ") }),
+  --     sn(nil, { t("sum_{"), i(1), t("}^{"), i(2), t("} ") }),
+  --   }),
+  --   { condition = tex.in_mathzone }
+  -- ),
   s(
     { trig = "pd", snippetType = "autosnippet" },
     c(1, {
@@ -252,7 +202,7 @@ return {
   ),
   s(
     { trig = "int", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
-    fmta("integral_(<>)^(<>) <> dif <>", {
+    fmta("integral<>_(<>)^(<>) <>", {
       i(1),
       i(2),
       i(3),
@@ -262,11 +212,10 @@ return {
   ),
   s(
     { trig = "oint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("ointegral_(<>)^(<>) <> dif <>", {
+    fmta("integral.cont_(<>)^(<>) <> ", {
       i(1),
       i(2),
       i(3),
-      i(4),
     }),
     { condition = tex.in_mathzone }
   ),
@@ -285,7 +234,7 @@ return {
   ),
   s(
     { trig = "iint", regTrig = true, wordTrig = false, snippetType = "autosnippet", priority = 2000 },
-    fmta("iintegral_(<>)^(<>) <> dif <>", {
+    fmta("integral.double_(<>)^(<>) <> dif <>", {
       i(1, "-infty"),
       i(2, "infty"),
       i(3),

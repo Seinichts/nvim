@@ -2,7 +2,7 @@ return {
   {
     "zbirenbaum/copilot.lua",
     opts = {
-      copilot_model = "claude-opus-4",
+      copilot_model = "gemini-2.5-pro",
       suggestion = {
         keymap = {
           accept = "<D-l>",

@@ -52,6 +52,9 @@ return {
   s({ trig = "zeta", snippetType = "autosnippet", wordTrig = false }, {
     t("zeta"),
   }, { condition = tex.in_mathzone }),
+  s({ trig = ";z", snippetType = "autosnippet", wordTrig = false }, {
+    t("zeta"),
+  }, { condition = tex.in_mathzone }),
   s({ trig = "Zeta", snippetType = "autosnippet", wordTrig = false }, {
     t("Zeta"),
   }, { condition = tex.in_mathzone }),

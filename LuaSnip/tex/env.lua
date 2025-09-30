@@ -89,6 +89,20 @@ return {
     { condition = line_begin * tex.in_text }
   ),
   s(
+    { trig = "bsol", snippetType = "autosnippet" },
+    fmta(
+      [[
+      \begin{solution}
+      <>
+      \end{solution}
+      ]],
+      {
+        i(0),
+      }
+    ),
+    { condition = line_begin * tex.in_text }
+  ),
+  s(
     { trig = "bf", snippetType = "autosnippet" },
     fmta(
       [[
@@ -230,12 +244,11 @@ return {
     { trig = "ben", snippetType = "autosnippet" },
     fmta(
       [[
-      \begin{enumerate}[<>]
+      \begin{enumerate}
         \item <>
       \end{enumerate}
       ]],
       {
-        i(1, "(a)"),
         i(0),
       }
     ),

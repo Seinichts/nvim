@@ -40,4 +40,11 @@ return {
     "evesdropper/luasnip-latex-snippets.nvim",
     enabled = false,
   },
+  {
+    "let-def/texpresso.vim",
+    lazy = false,
+    keys = {
+      { "<localleader>lP", "<cmd>TeXpresso %<cr>", desc = "TeXpresso" },
+    },
+  },
 }

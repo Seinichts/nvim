@@ -120,9 +120,6 @@ return {
   s({ trig = "**", wordTrig = false, snippetType = "autosnippet" }, {
     t("^*"),
   }, { condition = tex.in_mathzone_md }),
-  s({ trig = "  ", wordTrig = false, snippetType = "autosnippet" }, {
-    t("\\,"),
-  }, { condition = tex.in_mathzone_md }),
   s({ trig = "<>", wordTrig = false, snippetType = "autosnippet" }, {
     t("\\diamond"),
   }, { condition = tex.in_mathzone_md }),
@@ -222,9 +219,6 @@ return {
   s({ trig = "lor", snippetType = "autosnippet" }, {
     t("\\lor"),
   }, { condition = tex.in_mathzone_md }),
-  s({ trig = "\\tri", snippetType = "autosnippet" }, {
-    t("\\triangle"),
-  }, { condition = tex.in_mathzone_md }),
   s({ trig = "emp", snippetType = "autosnippet", priority = 2000 }, {
     t("\\emptyset"),
   }, { condition = tex.in_mathzone_md }),
@@ -263,7 +257,7 @@ return {
     { condition = tex.in_mathzone_md }
   ),
   s(
-    { trig = "jk", wordTrig = false, snippetType = "autosnippet" },
+    { trig = "jo", wordTrig = false, snippetType = "autosnippet" },
     fmta(
       [[
     _{<>}
