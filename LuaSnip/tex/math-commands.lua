@@ -119,6 +119,9 @@ return {
     }),
     { condition = tex.in_mathzone }
   ),
+  s(
+    { trig = "abs", regTrig = true, wordTrig = false, snippetType = "autosnippet" },
+  )
   s({ trig = "exp", snippetType = "autosnippet" }, {
     t("\\exp"),
   }, { condition = tex.in_mathzone }),

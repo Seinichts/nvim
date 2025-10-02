@@ -36,6 +36,13 @@ return {
     t("laplace"),
   }, { condition = tex.in_mathzone }),
   s(
+    { trig = "abs", snippetType = "autosnippet" },
+    fmta("abs(<>)", {
+      i(1),
+    }),
+    { condition = tex.in_mathzone }
+  ),
+  s(
     { trig = "bar", snippetType = "autosnippet" },
     fmta("overline(<>)", {
       i(1),
